@@ -9,7 +9,7 @@
 
 #include "include/core/SkTypes.h"
 
-#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26
+#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26 && !defined(__riscv)
 
 #include "include/gpu/GrBackendSurface.h"
 #include "include/gpu/GrTypes.h"

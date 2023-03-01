@@ -697,7 +697,7 @@ sk_sp<SkImage> SkImage::MakeCrossContextFromPixmap(GrDirectContext* dContext,
     return SkImage::MakeFromGenerator(std::move(gen));
 }
 
-#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26
+#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26 && !defined(__riscv)
 sk_sp<SkImage> SkImage::MakeFromAHardwareBuffer(AHardwareBuffer* graphicBuffer, SkAlphaType at,
                                                 sk_sp<SkColorSpace> cs,
                                                 GrSurfaceOrigin surfaceOrigin) {

@@ -24,7 +24,7 @@
 #include <functional>  // std::function
 #include <optional>
 
-#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26
+#if (defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26) && !defined(__riscv)
 #include <android/hardware_buffer.h>
 #endif
 
@@ -547,7 +547,7 @@ public:
 
 #endif // SK_SUPPORT_GPU
 
-#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26
+#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26 && !defined(__riscv)
     /** (See Skia bug 7447)
         Creates SkImage from Android hardware buffer.
         Returned SkImage takes a reference on the buffer.

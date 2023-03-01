@@ -172,7 +172,7 @@ DEF_TEST(SkMultiPictureDocument_Serialize_and_deserialize, reporter) {
 }
 
 
-#if SK_SUPPORT_GPU && defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26
+#if SK_SUPPORT_GPU && defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26 && !defined(__riscv)
 
 #include "include/core/SkBitmap.h"
 #include "include/core/SkColorSpace.h"

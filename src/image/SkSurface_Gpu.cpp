@@ -646,7 +646,7 @@ sk_sp<SkSurface> SkSurface::MakeFromBackendRenderTarget(GrRecordingContext* rCon
     return sk_make_sp<SkSurface_Gpu>(std::move(device));
 }
 
-#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26
+#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26 && !defined(__riscv)
 sk_sp<SkSurface> SkSurface::MakeFromAHardwareBuffer(GrDirectContext* dContext,
                                                     AHardwareBuffer* hardwareBuffer,
                                                     GrSurfaceOrigin origin,

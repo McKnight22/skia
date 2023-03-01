@@ -17,7 +17,7 @@
 #include "include/gpu/GrTypes.h"
 #endif
 
-#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26
+#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26 && !defined(__riscv)
 #include <android/hardware_buffer.h>
 #endif
 
@@ -359,7 +359,7 @@ public:
                                              SkBudgeted budgeted);
 
 
-#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26
+#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26 && !defined(__riscv)
     /** Private.
         Creates SkSurface from Android hardware buffer.
         Returned SkSurface takes a reference on the buffer. The ref on the buffer will be released

@@ -334,7 +334,7 @@ void GrGLCaps::init(const GrContextOptions& contextOptions,
         fClearTextureSupport = false;
     }
 
-#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26
+#if defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 26 && !defined(__riscv)
     fSupportsAHardwareBufferImages = true;
 #endif
 
